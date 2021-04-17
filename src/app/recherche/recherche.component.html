@@ -1,0 +1,87 @@
+<div class="container">
+    <br>
+    <h1 style="text-align: center; color: grey; padding-bottom: 50px;">Prevention combinée auprès des populations clés en mauritanie</h1>
+    
+    <div class="row">
+            <div class="card" style="margin-right: 30px; margin-left: 15px;">
+                
+                <h6 class="card-header bg-primary">Recherche par structure</h6>
+                <div  class="card-body">
+                    <div class="form-group">
+                        <label for="sel1">Selectionner une structure</label>
+                        <select class="form-control" id="sel1" (change)="search($event)" >
+                          <option *ngFor="let s of structures" value="{{s.name}}">{{s.name}}</option>
+                          
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+        
+        <div class="card  w-50 ">
+            <h6 class="card-header bg-primary">Recherche par Date</h6>
+                     
+            <div class="card-body">
+                 <form action="">
+                    <input type="text" style="margin-right: 3px;" placeholder="Date début">
+                    <input type="text" style="margin-right: 3px;" placeholder="Date fin">  
+                    <input type="submit"  value="Rechercher" class="btn btn-info"> 
+                 </form>
+            </div> 
+        </div>     
+    </div>
+
+   
+    <br>
+   
+</div>    
+<div class="container">
+    
+    <div class="card" style="width: 10rem;">
+        <h6 class="card-header">Nombres</h6>
+        <span *ngIf="cases" style="text-align: center; margin-top: 2px;">{{cases.length}}</span>
+    </div>
+    <br>
+    <table class="table table-bordered table-sm ">
+        <thead class="bg-primary">
+            <tr>
+                <th>Structure</th>
+                <th>Date d'interview</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Wilaya</th>
+                <th>Moughata</th>
+                <th>Numéro d'intentification</th>
+                <th>Nom d'intervenant</th>
+                <th>Sexe</th>
+                <th>Nationalité</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let level of cases | paginate: {itemsPerPage:5,currentPage:p};">
+                <td>{{level.structurelle}}</td>
+                <td>{{level.dateInterview}}</td>
+                <td>{{level.longitude}}</td>
+                <td>{{level.latitude}}</td>
+                <td>{{level.wilaya}}</td>
+                <td>{{level.moughata}}</td>
+                <td>{{level.numeroIintentification}}</td>
+                <td>{{level.nomIntervenant}}</td>
+                <td>{{level.sexe}}</td>
+                <td>{{level.nationalite}}</td>
+                <td style='white-space: nowrap'>
+                    <button style="margin-right: 3px;" class="btn btn-xs">
+                        <i class="far fa-edit"></i>
+                    </button>
+                    <button  class="btn btn-xs">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                  </td>
+            </tr>
+        </tbody> 
+      
+    </table>
+    <pagination-controls style="float: right;" (pageChange) ="p = $event"></pagination-controls>
+    <br>
+</div>

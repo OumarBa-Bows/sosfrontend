@@ -1,0 +1,40 @@
+
+<div class="container">
+    
+    <div class="card" style="width: 10rem;">
+        <h6 class="card-header">Nombres</h6>
+        <span *ngIf="levels" style="text-align: center; margin-top: 2px;">{{levels.length}}</span>
+    </div>
+    <br>
+    <table class="table table-bordered table-sm ">
+        <thead class="bg-primary">
+            <tr>
+                <th>Structure</th>
+                <th>Date d'interview</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Wilaya</th>
+                <th>Moughata</th>
+                <th>Numéro d'intentification</th>
+                <th>Nom d'intervenant</th>
+                <th>Sexe</th>
+                <th>Nationalité</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let level of levels">
+                <th><small>{{level.structurelle}}</small></th>
+                <th><small>{{level.dateInterview}}</small></th>
+                <th><small>{{level.longitude}}</small></th>
+                <th><small>{{level.latitude}}</small></th>
+                <th><small>{{level.wilaya}}</small></th>
+                <th><small>{{level.moughata}}</small></th>
+                <th><small>{{level.numeroIintentification}}</small></th>
+                <th><small>{{level.nomIntervenant}}</small></th>
+                <th><small>{{level.sexe}}</small></th>
+                <th><small>{{level.nationalite}}</small></th>
+            </tr>
+        </tbody> 
+    </table>
+    
+</div>
