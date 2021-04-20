@@ -10,5 +10,6 @@ export class Alllevels{
     nomIntervenant: String;
     sexe: String;
     nationalite: String;
+    gotoDetails: number;
 }
 

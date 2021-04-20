@@ -8,6 +8,8 @@ import { Ilevel1 } from '../level/Ilvel1';
 })
 export class LevelserviceService {
 
+  host = "http://localhost:8080";
+
   constructor(private http: HttpClient) { }
 
   public alllevels(): Observable<Ilevel1[]>{
@@ -15,7 +17,25 @@ export class LevelserviceService {
   }
 
   public levleslines(): Observable<any>{
-    return this.http.get<any>("http://localhost:8080/alllevels/levels");
+    return this.http.get<any>(this.host+"/alllevels/levels");
   }
 
+  public findByid(idlevel): Observable<Ilevel1>{
+    return this.http.get<Ilevel1>(this.host+"/levels/findById/"+idlevel);
+  }
+
+  //...........list des valeurs d'intification.............................
+  public getIdentification(idlevel): Observable<any>{
+    return this.http.get<any>(this.host+"/indentPersonnelle/getIdentification/"+idlevel);
+  }
+
+  //............;list des valeurs d'action comportementale................
+  public listcomportementalevalue(idlevel): Observable<any>{
+    return this.http.get<any>(this.host+"/comportementalVal/listcomportementalevalue/"+idlevel);
+  }
+
+  ///............recherche all levels par dates dans une intervalle.......
+  public rechercheParDates(startdate, enddate): Observable<any>{
+    return this.http.get<any>(this.host+"/alllevels/findByDate/"+startdate+"/"+startdate);
+  }
 }
