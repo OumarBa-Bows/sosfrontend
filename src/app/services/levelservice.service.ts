@@ -29,10 +29,7 @@ export class LevelserviceService {
     return this.http.get<any>(this.host+"/indentPersonnelle/getIdentification/"+idlevel);
   }
 
-  //............;list des valeurs d'action comportementale................
-  public listcomportementalevalue(idlevel): Observable<any>{
-    return this.http.get<any>(this.host+"/comportementalVal/listcomportementalevalue/"+idlevel);
-  }
+  
 
   ///............recherche all levels par dates dans une intervalle.......
   public rechercheParDates(startdate, enddate): Observable<any>{

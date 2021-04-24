@@ -1,55 +1,101 @@
-<div class="container">
-    <h2 style="margin-bottom: 50px;">Détails des informations relatives à la collecte </h2>
+<div class="container-fluid">
+    <br>
+    <h2 class="bg-light">Détails des informations relatives à la collecte </h2>
 <div>
-<h6>Données d'identification</h6>
-<table style="margin-bottom: 30px;" class="table table-bordered table-sm ">
-    <thead class="bg-primary">
-        <tr>
-            <th>Numéro d'identification</th>
-            <th>Sex</th>
-            <th>Nationnalite</th>
-            <th>Situation MAT</th>
+
+<div class="card">
+    
+    <div class="card-body">
+    <dl class="row"  *ngIf="indetification">
+        <dt class="col-sm-3">Numéro d'identification</dt>
+        <dd class="col-sm-9">{{indetification.numeroidentification}}</dd>
+      
+        <dt class="col-sm-3">Sexe</dt>
+        <dd class="col-sm-9">
+          {{indetification.sex}}
+        </dd>
+      
+        <dt class="col-sm-3">Nationnalité</dt>
+        <dd class="col-sm-9">{{indetification.nationnalite}}</dd>
+      
+        <dt class="col-sm-3 text-truncate">Situation MAT</dt>
+        <dd class="col-sm-9">{{indetification.situationmaretal}}</dd>
+    </dl>
+    </div>
+</div>
+ <br>   
+
+ 
+  
+  <!--<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Some content.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Some content in menu 1.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Some content in menu 2.</p>
+    </div>
+  </div> -->
+
+
+
+<br>
+</div>
+<h6>Actions Structurelles</h6>
+<table class="table-responsive-sm table-bordered text-center">
+    <thead class="bg-light">
+        <tr class="font-weight-light"> 
+            <th><small> Date d'intervention</small></th>
+            <th><small> Appui Socio-économique</small></th>
+            <th><small> Appui juridique</small></th>
+            <th><small> Orientation vers les strucures spécialisées</small></th>
+            <th><small> Formation spécifiques</small></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngIf="indetification">
-            <td>{{indetification.numeroidentification}}</td>
-            <td>{{indetification.sex}}</td>
-            <td>{{indetification.nationnalite}}</td>
-            <td>{{indetification.situationmaretal}}</td>
-            
+        <tr *ngFor="let value of structurellevalues">
+            <td>{{value.date_intervention}}</td>
+            <td>{{value.appui_economique}}</td>
+            <td>{{value.appui_jurique}}</td>
+            <td>{{value.orientation}}</td>
+            <td>{{value.formation_specique}}</td>
         </tr>
-    </tbody> 
-    
+    </tbody>   
 </table>
 <br>
-</div>
-<div >
-    <h6>Actions Comportementales</h6>
-    <table class="table-responsive table-bordered ">
-        <thead class="bg-primary">
-            <tr>
-                <th>Entretien indi</th>
-                <th>causerie</th>
-                <th>Orientation dépistage vih</th>
-                <th>Orientation vers les soins d'IST</th>
-                <th>Orientation dépistage Hp</th>
-                <th>Outils IEC</th>
-                <th>Outils utilisés</th>
-                <th>Distrubition IEC</th>
-                <th>Gels</th>
-                <th>Thèmes</th>
-                <th>Participation au groupe de parole</th>
-                <th>Participation au repas communautaires</th>
-                <th>Education thérapeutique</th>
-                <th>Perdue de vue retrouvé</th>
-                <th>Distibution de vidéo sur réseaux sociaux</th>
-                <th>Orientation vers la PTME</th>
-                <th>Orientation vers les soins de la médecine générale</th>
+<h6>Actions Comportementales</h6>
+<div style="overflow-x:auto;">
+    <table class="table-responsive-sm table-bordered">
+        <thead class="bg-light">
+            <tr> 
+                <th style='white-space: nowrap'><small>Date d'intervention</small></th>
+                <th style='white-space: nowrap'><small>Entretien indi</small></th>
+                <th style='white-space: nowrap'><small>causerie</small></th>
+                <th style='white-space: nowrap'><small>dépistage vih</small></th>
+                <th style='white-space: nowrap'><small>Orientation vers les soins d'IST</small></th>
+                <th style='white-space: nowrap'><small>Orientation dépistage Hp</small></th>
+                <th style='white-space: nowrap'><small>Outils IEC</small></th>
+                <th style='white-space: nowrap'><small>Outils utilisés</small></th>
+                <th style='white-space: nowrap'><small>Distrubition IEC</small></th>
+                <th style='white-space: nowrap'><small>Thèmes</small></th>
+                <th style='white-space: nowrap'><small>Participation au groupe de parole</small></th>
+                <th style='white-space: nowrap'><small>Participation au repas communautaires</small></th>
+                <th style='white-space: nowrap'><small>Education thérapeutique</small></th>
+                <th style='white-space: nowrap'><small>Perdue de vue retrouvé</small></th>
+                <th style='white-space: nowrap'><small>Distibution de vidéo sur réseaux sociaux</small></th>
+                <th style='white-space: nowrap'><small>Orientation vers la PTME</small></th>
+                <th style='white-space: nowrap'><small>Orientation vers les soins de la médecine générale</small></th>
+                <th style='white-space: nowrap'><small>Modifier</small></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let value of comportementalValues">
+                <td>{{value.date_comp}}</td>
                 <td>{{value.entretienindivid}}</td>
                 <td>{{value.causerie}}</td>
                 <td>{{value.orientation}}</td>
@@ -58,7 +104,6 @@
                 <td>{{value.outils_iec}}</td>
                 <td>{{value.outils_util}}</td>
                 <td>{{value.distribution}}</td>
-                <td>{{value.gels}}</td>
                 <td>{{value.thems}}</td>
                 <td>{{value.participationGP}}</td>
                 <td>{{value.particioationRC}}</td>
@@ -67,9 +112,79 @@
                 <td>{{value.distributionvideo}}</td>
                 <td>{{value.orientationversPTME}}</td>
                 <td>{{value.orientationVersSoin}}</td>
+                <td><button style="margin-right: 3px;" class="btn btn-xs">
+                    <i class="far fa-edit"></i>
+                </button></td>
+            </tr>
+        </tbody>   
+    </table>
+</div>
+<br>
+
+<h6>Actions Biomedicale</h6>
+<div style="overflow-x:auto;">
+    <table class="table table-responsive table-sm  table-bordered ">
+        <thead class="bg-light">
+            <tr class="font-weight-light"> 
+                <th style='white-space: nowrap'><small>Date d'intervention</small></th>
+                <th style='white-space: nowrap'><small>Dépistage VIH</small></th>
+                <th style='white-space: nowrap'><small>Resultat depistage VIH</small></th>
+                <th style='white-space: nowrap'><small>Si positif quel action</small></th>
+                <th style='white-space: nowrap'><small>Dépistage CTA</small></th>
+                <th style='white-space: nowrap'><small>Resultat CTA</small></th>
+                <th style='white-space: nowrap'><small>Mise sous ARV</small></th>
+                <th style='white-space: nowrap'><small>Date mise ARV</small></th>
+                <th style='white-space: nowrap'><small>Sinon mise ARV pourquoi</small></th>
+                <th style='white-space: nowrap'><small>Dépistage IST</small></th>
+                <th style='white-space: nowrap'><small>Dépistage HBS</small></th>
+                <th style='white-space: nowrap'><small>Structure dépistage</small></th>
+                
+                <th style='white-space: nowrap'><small>Resultats test Hép</small></th>
+                <th style='white-space: nowrap'><small>Si Hép positif, la PC a t-il orienté</small></th>
+                <th style='white-space: nowrap'><small>Soins médecine général</small></th>
+                <th style='white-space: nowrap'><small>Distribution préservatif</small></th>
+                <th style='white-space: nowrap'><small>Preservatifs</small></th>
+                <th style='white-space: nowrap'><small>Distribution Gel</small></th>
+                <th style='white-space: nowrap'><small>Gels</small></th>
+                <th style='white-space: nowrap'><small>Distribution ARV pour les soins (TaPs)</small></th>
+                <th style='white-space: nowrap'><small>Distritution ARV pour la prévention(PrEp)</small></th>
+                <th style='white-space: nowrap'><small>Distribution des ARV pour la PTME</small></th>
+                <th style='white-space: nowrap'><small>Autres intervention Biomedicale</small></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let value of biomedicalevalues" style="margin-bottom: 10px;">
+                <td>{{value.dateIntervention}}</td>
+                <td>{{value.depistageVIH}}</td>
+                <td>{{value.resultat_depistage}}</td>
+                <td>{{value.action}}</td>
+                <td>{{value.depistagecta}}</td>
+                <td>{{value.resultatcta}}</td>
+                <td>{{value.mise_arv}}</td>
+                <td>{{value.date_mise_arv}}</td>
+                <td>{{value.pourquoi}}</td>
+                <td>{{value.depistageIST}}</td>
+                <td>{{value.depistageHBS}}</td>
+                <td>{{value.structure_depitage}}</td>
+                <td>{{value.resulatat_hp}}</td>
+                <td>{{value.hp_orient}}</td>
+                <td>{{value.soins_medicale}}</td>
+                <td>{{value.distributionpresev}}</td>
+                <td>{{value.preservatif}}</td>
+                <td>{{value.distributionGel}}</td>
+                <td>{{value.gels}}</td>
+                <td>{{value.distribution_arv}}</td>
+                <td>{{value.distribution_arv_prev}}</td>
+                <td>{{value.distribution_arv_ptme}}</td>
+                <td>{{value.autres}}</td>
             </tr>
         </tbody> 
         
     </table>
+    <br>
 </div>
+
+
+   
 </div>
+

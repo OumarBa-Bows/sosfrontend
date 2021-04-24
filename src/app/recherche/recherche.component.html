@@ -1,11 +1,12 @@
 <div class="container">
     <br>
+    <br>
     <h1 style="text-align: center; color: grey; padding-bottom: 50px;">Prévention combinée auprès des populations clés en mauritanie</h1>
-    
+
     <div class="row">
             <div class="card" style="margin-right: 30px; margin-left: 15px;">
                 
-                <h6 class="card-header bg-primary">Recherche par structure</h6>
+                <h6 class="card-header ">Recherche par structure</h6>
                 <div  class="card-body">
                     <div class="form-group">
                         <label for="sel1">Selectionner une structure</label>
@@ -18,8 +19,8 @@
             </div>
         
         
-        <div class="card  w-50 ">
-            <h6 class="card-header bg-primary">Recherche par Date</h6>
+        <div class="card  w-50">
+            <h6 class="card-header bd-light">Recherche par Date</h6>
                      
             <div class="card-body">
                  <form novalidate>
@@ -34,45 +35,40 @@
    
     <br>
    
-</div>    
-<div class="container">
-    
-    <div class="card" style="width: 10rem;">
-        <h6 class="card-header">Nombres</h6>
-        <span *ngIf="cases" style="text-align: center; margin-top: 2px;">{{cases.length}}</span>
-    </div>
-    <br>
-    <table class="table-responsive table-bordered table-sm ">
-        <thead class="bg-primary">
+
+    <P>Total : <span *ngIf="cases" style="text-align: center; margin-top: 2px;"><strong>{{cases.length}}</strong></span></P>
+        
+    <table class="table table-responsive table-sm  table-bordered ">
+        <thead class="bg-light">
             <tr>
-                <th>Structure</th>
                 <th>Date d'interview</th>
-                <th>Longitude</th>
-                <th>Latitude</th>
                 <th>Wilaya</th>
                 <th>Moughata</th>
-                <th>Numéro d'intentification</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Structure</th>
                 <th>Nom d'intervenant</th>
+                <th>Numéro d'intentification</th>
                 <th>Sexe</th>
                 <th>Nationalité</th>
-                <th>Actions</th>
+                <th>Détails</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let level of cases | paginate: {itemsPerPage:5,currentPage:p};">
-                <td>{{level.structurelle}}</td>
                 <td>{{level.dateInterview}}</td>
-                <td>{{level.longitude}}</td>
-                <td>{{level.latitude}}</td>
                 <td>{{level.wilaya}}</td>
                 <td>{{level.moughata}}</td>
-                <td>{{level.numeroIintentification}}</td>
+                <td>{{level.longitude}}</td>
+                <td>{{level.latitude}}</td>
+                <td>{{level.structurelle}}</td>
                 <td>{{level.nomIntervenant}}</td>
+                <td>{{level.numeroIintentification}}</td>
                 <td>{{level.sexe}}</td>
                 <td>{{level.nationalite}}</td>
                 <td style='white-space: nowrap'>
                     <button style="margin-right: 3px;" class="btn btn-xs"(click)="gotoDetails(level.level1Id)">
-                        <i class="far fa-edit"></i>
+                        <i class="fas fa-info-circle" style="color:	#1E90FF;"></i>
                     </button>
                 </td>
                 <router-outlet></router-outlet>
@@ -80,6 +76,7 @@
         </tbody> 
         
     </table>
+
     <pagination-controls style="float: right;" (pageChange) ="p = $event"></pagination-controls>
     <br>  
    

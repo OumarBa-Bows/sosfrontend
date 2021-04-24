@@ -13,6 +13,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DetailcasesComponent } from './details/detailcases/detailcases.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
