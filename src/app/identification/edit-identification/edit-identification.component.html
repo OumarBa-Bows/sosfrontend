@@ -1,0 +1,202 @@
+<div class="container-fluid">
+
+    <mat-toolbar class="bg-secondary">
+        <span class="text-white">Modification d'identification</span>
+    </mat-toolbar>
+    <hr>
+
+    <form [formGroup]="indentificationForm">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">identification</h5>
+                <div class="form-row ">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Prénom</label>
+                        <input type="text" formControlName="Prenom" style="margin-bottom: 1px;" class="form-control"
+                            id="formGroupExampleInput" placeholder="Amadou">
+                    </div>
+                    <div class="form-group col-md-6" style="margin-bottom: 1px;">
+                        <label for="formGroupExampleInput">Prénom de la mére</label>
+                        <input type="text" formControlName="prenom_mere" style="margin-bottom: 2px;"
+                            class="form-control" id="formGroupExampleInput" placeholder="Mariem">
+                    </div>
+                </div>
+                <div class="form-row ">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Prénom du pére</label>
+                        <input type="text" formControlName="prenom_pere" style="margin-bottom: 1px;"
+                            class="form-control" id="formGroupExampleInput" placeholder="Sidi">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Année de naissance</label>
+                        <input type="text" formControlName="annee_naissance" style="margin-bottom: 1px;"
+                            class="form-control" id="formGroupExampleInput" placeholder="ddmmyyyy">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <span class="col-2">Catégorie</span>
+                        <div class="form-check col-1" *ngFor="let val of elements.categorie">
+                            <label class="form-check-label ">
+                                <input type="radio" formControlName="categorie" class="form-check-input "
+                                    value="{{val.name}}">{{val.name}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Localisation et identification</h5>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Willaya</label>
+                        <select id="inputState" formControlName="willayaa" class="form-control">
+                            <option *ngFor="let willaya of elements.willaya" value="{{willaya.name}}">{{willaya.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Moughata</label>
+                        <select id="inputState" formControlName="moughata" class="form-control">
+                            <option name="moughata" *ngFor="let moughata of elements.moughata"
+                                value="{{moughata.name}}">
+                                {{moughata.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Commune</label>
+                        <select id="inputState" formControlName="commune" class="form-control">
+                            <option *ngFor="let commune of elements.commune" value="{{commune.name}}">{{commune.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <p>Sexe</p>
+                        <div class="form-check-inline" *ngFor="let sexe of elements.sexe">
+                            <label class="form-check-label">
+                                <input type="radio" formControlName="sexe" class="form-check-input"
+                                    value="{{sexe.name}}">{{sexe.name}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Date d'identification</label>
+                        <input type="text" formControlName="date_identification" style="margin-bottom: 1px;"
+                            class="form-control" id="formGroupExampleInput" placeholder="ddmmyyyy">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Nationnalté</label>
+                        <select id="inputState" formControlName="nationnalte" class="form-control">
+                            <option *ngFor="let nationalite of elements.nationalite" value="{{nationalite.name}}">
+                                {{nationalite.name}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Autre nationnalté</label>
+                        <input type="text" formControlName="autre_nationnalite" style="margin-bottom: 1px;"
+                            class="form-control" id="formGroupExampleInput" placeholder="ddmmyyyy">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Nom du site</label>
+                        <select id="inputState" class="form-control" formControlName="nom_site">
+                            <option *ngFor="let site of elements.nomSite" value="{{site.name}}">{{site.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Autre site</label>
+                        <input type="text" formControlName="autre_site" style="margin-bottom: 1px;" class="form-control"
+                            id="formGroupExampleInput" placeholder="ddmmyyyy">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Téléphone</label>
+                        <input type="tel" style="margin-bottom: 1px;" formControlName="telephone" class="form-control"
+                            id="formGroupExampleInput">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Age</label>
+                        <input type="number" formControlName="age" style="margin-bottom: 1px;" class="form-control"
+                            id="formGroupExampleInput" placeholder="23">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Situation matrim</label>
+                        <select id="inputState" class="form-control" formControlName="situation_matrim">
+                            <option *ngFor="let situation of elements.situationmatrim" value="{{situation.name}}">
+                                {{situation.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Niveau scolaire</label>
+                        <select id="inputState" class="form-control" formControlName="niveau_scolaire">
+                            <option *ngFor="let niveau of elements.niveauScolaire" value="{{niveau.name}}">
+                                {{niveau.name}}</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Information sur l'intervenant</h5>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Nom de la structure</label>
+                        <select id="inputState" class="form-control" formControlName="nom_structure">
+                            <option *ngFor="let structure of elements.structure" value="{{structure.name}}">
+                                {{structure.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Date de saisie</label>
+                        <input type="text" formControlName="date_saisie" style="margin-bottom: 1px;"
+                            class="form-control" id="formGroupExampleInput">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Date de la dernière modification</label>
+                        <input type="text" formControlName="date_dernienre_modif" style="margin-bottom: 1px;"
+                            class="form-control" id="formGroupExampleInput">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Type de cas</label>
+                        <select id="inputState" class="form-control" formControlName="type_cas">
+                            <option *ngFor="let val of elements.typeCas" value="{{val.name}}">{{val.name}}</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <div class="button-row">
+        <button class="btn btn-secondary btn-sm" (click)="onClear()">Fermer</button>
+        <button type="submit" class="btn btn-primary btn-sm" (click)="update()">Enregistrer</button>
+    </div>
+
+</div>

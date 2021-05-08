@@ -1,0 +1,72 @@
+<div class="container-fluid">
+
+
+    <mat-toolbar class="bg-secondary">
+        <span class="text-white">Modification des actions structurelles</span>
+    </mat-toolbar>
+    <hr>
+
+    <form [formGroup]="structureForm">
+        <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-3 col-form-label">Date d'intervention</label>
+            <div class="col-sm-7">
+                <input type="text" formControlName="date_intervention" class="form-control" id="colFormLabel"
+                    placeholder="ddmmyyyy">
+            </div>
+        </div>
+
+        <div class="form-row" style="margin-bottom: 5px;">
+            <div class="form-group col-md-4">
+                <p>Appui Socio-économique</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="appui_soccio" class="form-check-input"
+                            value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+            <div class="form-group col-md-4">
+                <p>Appui juridique</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="appui_juridique" value="{{val.name}}"
+                            class="form-check-input">{{val.name}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Orientation vers les structures spécialisées</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="Orientation" class="form-check-input"
+                            value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+            <div class="form-group col-md-4">
+                <p>Formation spécifiques</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="formation_specifique" class="form-check-input"
+                            value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+
+
+        <div class="button-row">
+            <button class="btn btn-secondary btn-sm" (click)="onClear()">Fermer</button>
+            <button type="submit" class="btn btn-primary btn-sm" (click)="updateStructure()">Enregistrer</button>
+        </div>
+    </form>
+</div>

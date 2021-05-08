@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <h3>Details des actions structurelle</h3>
+    <hr>
+    <form>
+        <div class="row" *ngIf="strucValues">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label> Date d'intervention</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{strucValues.date_intervention}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Appui Socio-économique</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{strucValues.appui_economique}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Appui juridique</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{strucValues.appui_jurique}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+
+                <div class="row">
+                    <div class="col">
+                        <label>Orientation vers les structures spécialisées</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{strucValues.orientation}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Formation spécifiques</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{strucValues.formation_specique}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-secondary btn-sm float-right" (click)="onClear()">Fermer</button>
+    </form>
+</div>

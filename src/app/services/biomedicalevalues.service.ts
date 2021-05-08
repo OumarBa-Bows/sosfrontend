@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -12,8 +12,12 @@ export class BiomedicalevaluesService {
 
   constructor(private http: HttpClient) { }
 
-  public listBiomedicaleVlues(idLevle): Observable<any>{
-    return this.http.get<any>(this.host+"/list/"+idLevle);
+  public listBiomedicaleVlues(idLevle): Observable<any> {
+    return this.http.get<any>(this.host + "/list/" + idLevle);
+  }
+
+  public finfByBomedicaleId(idbio): Observable<any> {
+    return this.http.get<any>(this.host + "/findByBioId/" + idbio);
   }
 
 }

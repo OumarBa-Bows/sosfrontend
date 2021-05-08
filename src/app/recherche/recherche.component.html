@@ -1,60 +1,76 @@
 <div class="container">
     <br>
     <br>
-    <h1 style="text-align: center; color: grey; padding-bottom: 50px;">Prévention combinée auprès des populations clés en mauritanie</h1>
+    <h1 style="text-align: center; color: grey; padding-bottom: 50px;">Prévention combinée auprès des populations clés
+        en mauritanie</h1>
 
     <div class="row">
-            <div class="card" style="margin-right: 30px; margin-left: 15px;">
-                
-                <h6 class="card-header ">Recherche par structure</h6>
-                <div  class="card-body">
-                    <div class="form-group">
-                        <label for="sel1">Selectionner une structure</label>
-                        <select class="form-control" id="sel1" (change)="search($event)" >
-                          <option *ngFor="let s of structures" value="{{s.name}}">{{s.name}}</option>
-                          
-                        </select>
-                    </div>
+        <div class="card" style="margin-right: 30px; margin-left: 15px;">
+
+            <h6 class="card-header ">Recherche par structure</h6>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="sel1">Selectionner une structure</label>
+                    <select class="form-control" id="sel1" (change)="search($event)">
+                        <option *ngFor="let s of structures" value="{{s.name}}">{{s.name}}</option>
+
+                    </select>
                 </div>
             </div>
-        
-        
+        </div>
+
+
         <div class="card  w-50">
             <h6 class="card-header bd-light">Recherche par Date</h6>
-                     
+
             <div class="card-body">
-                 <form novalidate>
-                    <input type="text" style="margin-right: 3px;" #startdate="ngModel" name="startdate" [(ngModel)]="model.startdate" placeholder="Date début">
-                    <input type="text" style="margin-right: 3px;" #enddate="ngModel" name="enddate"   [(ngModel)]="model.enddate"  placeholder="Date fin">  
-                    <input type="submit"  value="Rechercher" [disabled]="!model.startdate || !model.enddate" (click)="rechercheParDates()" class="btn btn-info"> 
-                 </form>
-            </div> 
-        </div>     
+                <form novalidate>
+                    <input type="text" style="margin-right: 3px;" #startdate="ngModel" name="startdate"
+                        [(ngModel)]="model.startdate" placeholder="Date début: ddmmyyyy">
+                    <input type="text" style="margin-right: 3px;" #enddate="ngModel" name="enddate"
+                        [(ngModel)]="model.enddate" placeholder="Date fin: ddmmyyyy">
+                    <input type="submit" value="Rechercher" [disabled]="!model.startdate || !model.enddate"
+                        (click)="rechercheParDates()" class="btn btn-info">
+                </form>
+            </div>
+        </div>
     </div>
 
-   
-    <br>
-   
 
-    <P>Total : <span *ngIf="cases" style="text-align: center; margin-top: 2px;"><strong>{{cases.length}}</strong></span></P>
-        
-    <table class="table table-responsive table-sm  table-bordered ">
-        <thead class="bg-light">
+    <br>
+
+
+    <P>Total : <span *ngIf="cases" style="text-align: center; margin-top: 2px;"><strong>{{cases.length}}</strong></span>
+    </P>
+
+
+
+    <table class="table table-bordered table-striped table-hover">
+
+        <thead>
+
             <tr>
-                <th>Date d'interview</th>
-                <th>Wilaya</th>
-                <th>Moughata</th>
-                <th>Longitude</th>
-                <th>Latitude</th>
-                <th>Structure</th>
-                <th>Nom d'intervenant</th>
-                <th>Numéro d'intentification</th>
-                <th>Sexe</th>
-                <th>Nationalité</th>
-                <th>Détails</th>
+
+                <th scope="col">Date d'interview</th>
+                <th scope="col">Wilaya</th>
+                <th scope="col">Moughata</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Structure</th>
+                <th scope="col">Nom d'intervenant</th>
+                <th scope="col">Numéro d'intentification</th>
+                <th scope="col">Sexe</th>
+                <th scope="col">Nationalité</th>
+                <th scope="col">Actions</th>
+
             </tr>
+
         </thead>
+
         <tbody>
+
+            <tr>
+
             <tr *ngFor="let level of cases | paginate: {itemsPerPage:5,currentPage:p};">
                 <td>{{level.dateInterview}}</td>
                 <td>{{level.wilaya}}</td>
@@ -67,17 +83,23 @@
                 <td>{{level.sexe}}</td>
                 <td>{{level.nationalite}}</td>
                 <td style='white-space: nowrap'>
-                    <button style="margin-right: 3px;" class="btn btn-xs"(click)="gotoDetails(level.level1Id)">
-                        <i class="fas fa-info-circle" style="color:	#1E90FF;"></i>
+                    <button style="margin-right: 3px;" class="btn btn-info" (click)="gotoDetails(level.level1Id)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="btn btn-xs btn-primary"
+                        (click)="editStructure(level.level1Id,level.localisationId,level.inf_intervenantId)">
+                        <i class="far fa-edit"></i>
                     </button>
                 </td>
                 <router-outlet></router-outlet>
-            </tr>
-        </tbody> 
-        
-    </table>
 
-    <pagination-controls style="float: right;" (pageChange) ="p = $event"></pagination-controls>
-    <br>  
-   
+            </tr>
+
+
+
+
+        </tbody>
+
+    </table>
+    <pagination-controls style="float: right;" (pageChange)="p = $event"></pagination-controls>
 </div>

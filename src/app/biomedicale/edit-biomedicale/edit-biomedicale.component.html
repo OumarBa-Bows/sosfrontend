@@ -1,0 +1,218 @@
+<div class="container-fluid">
+
+
+    <mat-toolbar class="bg-secondary">
+        <span class="text-white">Modification des actions biomedicales</span>
+    </mat-toolbar>
+    <hr>
+
+    <form [formGroup]="biomedicaleForm">
+        <div class="form-row">
+            <div class="form-group col-md-6" style="margin-bottom: 2px;">
+                <label for="formGroupExampleInput">Date d'intervention</label>
+                <input type="text" class="form-control" formControlName="date_intervention" id="formGroupExampleInput"
+                    placeholder="ddmmyyyy">
+            </div>
+            <div class="form-group col-md-6">
+                <p>Dépistage VIH</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="depistage_vih" name="depistage_vih"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Resultat depistage VIH</p>
+                <div class="form-check-inline" *ngFor="let val of resuldepistage">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="resultat_depistageVIH" name="resultat_depistageVIH"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputAction">Si positif quel action</label>
+                <select id="inputAction" class="form-control" formControlName="action" name="action">
+                    <option *ngFor="let val of sipositifAction" value="{{val.name}}">{{val.name}}</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Dipistage CTA</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="depistage_cta" name="depistage_cta"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputAction">Resultat CTA</label>
+                <select id="inputAction" class="form-control" formControlName="resultat_cta" name="resultat_cta">
+                    <option *ngFor="let val of rsultCta" value="{{val.name}}">{{val.name}}</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Mise sous ARV</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" formControlName="mise_sous_arv"
+                            name="mise_sous_arv" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+
+                <label for="formGroupExampleInput">Date mise ARV</label>
+                <input type="text" class="form-control" formControlName="date_mise_arv" name="date_mise_arv"
+                    id="formGroupExampleInput" placeholder="ddmmyyyy: 02042021">
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="formGroupExampleInput">Pourqui</label>
+                <textarea type="text" formControlName="pourquoi" name="pourquoi" class="form-control"
+                    id="formGroupExampleInput"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+                <p>Dépistage IST</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="dépistage_ist" name="dépistage_ist"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Dépistage HBS</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="dipistage_hbs" name="dipistage_hbs"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="formGroupExampleInput">Structure dépistage</label>
+                <input type="text" formControlName="structure_depistage" class="form-control"
+                    id="formGroupExampleInput">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAction">Résultats test Hép</label>
+
+                <select id="inputAction" class="form-control" formControlName="resultat_test_hep"
+                    name="resultat_test_hep">
+                    <option *ngFor="let val of resultatTestHep" value="{{val.name}}">{{val.name}}</option>
+
+                </select>
+
+            </div>
+            <div class="form-group col-md-6">
+                <p>Si Hép positif, la PC a t-il été orienté</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="si_hep_positif" name="si_hep_positif"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Soins médecine générale</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="soins_medicale_general" name="soins_medicale_general"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <p>Distribution préservatif</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="distribution_preservatif" name="distribution_preservatif"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="formGroupExampleInput">Préservatifs</label>
+                <input type="number" formControlName="preservatif" name="preservatif" class="form-control"
+                    id="formGroupExampleInput">
+            </div>
+            <div class="form-group col-md-6">
+                <p>Distribution Gel</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="distribution_gel" name="distribution_gel"
+                            class="form-check-input" value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="formGroupExampleInput">Gels</label>
+                <input type="number" formControlName="gel" name="gel" class="form-control" id="formGroupExampleInput">
+            </div>
+            <div class="form-group col-md-6">
+                <p>Distribution des ARV pour les soins (Taps)</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="arv_soins" name="arv_soins" class="form-check-input"
+                            value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Distribution des ARV pour la prévention (PrEp)</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="arv_prev" name="arv_prev" class="form-check-input"
+                            value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <p>Distribution des ARV pour la PTME</p>
+                <div class="form-check-inline" *ngFor="let val of yesOrNon">
+                    <label class="form-check-label">
+                        <input type="radio" formControlName="arv_ptme" name="arv_ptme" class="form-check-input"
+                            value="{{val.name}}">{{val.name}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button class="btn btn-secondary btn-sm" (click)="onClear()">Fermer</button>
+            <button type="submit" class="btn btn-primary btn-sm" (click)="updateBiomedicale()">Enregistrer</button>
+        </div>
+    </form>
+</div>

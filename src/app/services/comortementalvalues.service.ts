@@ -15,4 +15,9 @@ export class ComortementalvaluesService {
   public listcomportementalevalue(idlevel): Observable<any>{
     return this.http.get<any>(this.host+"/listcomportementalevalue/"+idlevel);
   }
+
+  ///.................retourn un object comportementaleValue(étiquètes comportementale)
+  public findByidcomportementale(idcomp): Observable<any>{
+    return this.http.get<any>(this.host+"/findByIdComportementale/"+idcomp);
+  }
 }

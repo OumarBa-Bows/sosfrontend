@@ -1,0 +1,198 @@
+<div class="container-fluid">
+
+
+  <mat-toolbar class="bg-secondary">
+    <span class="text-white">Modification des actions comportementales</span>
+  </mat-toolbar>
+  <hr>
+
+  <form [formGroup]="comportementaleForm">
+    <div class="form-row ">
+      <div class="form-group col-md-6" style="margin-bottom: 2px;">
+        <label for="formGroupExampleInput">Date d'intervention</label>
+        <input type="text" formControlName="date_intervention" class="form-control" id="formGroupExampleInput"
+          placeholder="ddmmyyyy">
+      </div>
+      <div class="form-group col-md-6">
+        <p>Entretien individuel</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="entretien_indi" name="entretien_indi" class="form-check-input"
+              value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p>Participation à une causerie</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="participation_causerie" name="participation_causerie"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+
+      </div>
+      <div class="form-group col-md-6">
+        <p>Orientation depistage VIH</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="orientation_depistage_vih" name="orientation_depistage_vih"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <br>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p> Orientation vers les soins d'IST</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="orientation_soinsIst" name="orientation_soinsIst"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <p>Orientation dépistage Hp</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="Orientation_depistage_hp" name="Orientation_depistage_hp"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p>Utilisation Outils IEC</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="utilisation_outils" name="utilisation_outils" class="form-check-input"
+              value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputState">Outils utilisés</label>
+        <select id="inputState" class="form-control" formControlName="outils_utilises">
+          <option *ngFor="let outil of outils" value="{{outil.name}}">{{outil.name}}</option>
+        </select>
+      </div>
+
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p>Distribution IEC</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="distribution_ie" name="distribution_ie" class="form-check-input"
+              value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+
+        <label for="inputState">Thèmes</label>
+        <select id="inputState" class="form-control" formControlName="themes">
+          <option *ngFor="let them of themes" value="{{them.name}}">{{them.name}}</option>
+
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <p>Participation au groupe de parole</p>
+
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" name="participation_group_parole" formControlName="participation_group_parole"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+
+      </div>
+      <div class="form-group col-md-6">
+        <p>Participation au repas communautaires</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" name="rapas_communautaire" formControlName="rapas_communautaire"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p>Education thérapeutique</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" name="education_therapeutique" formControlName="education_therapeutique"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <p>Perdue de vue retrouvé</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="perdue_devue" name="perdue_devue" class="form-check-input"
+              value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p>Distibution de vidéo sur réseaux sociaux</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="distibutionvideo_reseausociaux" name="distibutionvideo_reseausociaux"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <p>Orientation vers la PTME</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" name="orientation_ptme" formControlName="orientation_ptme" class="form-check-input"
+              value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <p>Orientation vers les soins de la médecine générale</p>
+        <div class="form-check-inline" *ngFor="let val of yesOrNon">
+          <label class="form-check-label">
+            <input type="radio" formControlName="orientation_medecinegenerale" name="orientation_medecinegenerale"
+              class="form-check-input" value="{{val.name}}">{{val.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <button class="btn btn-secondary btn-sm" (click)="onClear()">Fermer</button>
+      <button type="submit" class="btn btn-primary btn-sm" (click)="updateComportementale()">Enregistrer</button>
+    </div>
+  </form>
+</div>

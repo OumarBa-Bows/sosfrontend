@@ -1,0 +1,187 @@
+<div class="container-fluid">
+    <h3>Details des actions comportmentale</h3>
+    <hr>
+    <form>
+        <div class="row" *ngIf="comportementaleVs">
+            <div class="col">
+
+                <div class="row">
+                    <div class="col">
+                        <label> Date d'intervention</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.date_comp}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Participation à une causerie</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.causerie}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Orientation vers les soins d'IST</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.aide_social}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Utilisation Outils IEC</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.outils_iec}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Distribution IEC</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.distribution}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Participation au groupe de parole</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.participationGP}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Education thérapeutique</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.educationThe}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Distibution de vidéo sur réseaux sociaux</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.distributionvideo}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Orientation vers les soins de la médecine générale</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.orientationVersSoin}}</small>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label> Entretien individuel</label>
+                    </div>
+                    <div class="col">
+                        <p style="font-weight: italic; color: grey">
+                            <small>{{comportementaleVs.entretienindivid}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Orientation depistage VIH</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.orientation}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Orientation dépistage Hp</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.dep_hp}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Outils utilisés</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.outils_util}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Thèmes</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.thems}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Participation au repas communautaires</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.particioationRC}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Perdue de vue retrouvé</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.perduedevue}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Orientation vers la PTME</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{comportementaleVs.orientationversPTME}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-secondary btn-sm float-right" (click)="onClear()">Fermer</button>
+    </form>
+</div>

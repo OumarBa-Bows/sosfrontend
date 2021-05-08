@@ -1,0 +1,237 @@
+<div class="container-fluid">
+    <h3>Details des actions biomedicales</h3>
+    <hr>
+    <form>
+        <div class="row" *ngIf="biomedicaleValue">
+            <div class="col">
+
+                <div class="row">
+                    <div class="col">
+                        <label> Date d'intervention</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.dateIntervention}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Dépistage VIH</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.depistageVIH}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Resultat depistage VIH</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.resultat_depistage}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Si positif quel action</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.action}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Dipistage CTA</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.depistagecta}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Resultat CTA</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.resultatcta}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Mise sous ARV</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.mise_arv}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Date mise ARV</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.date_mise_arv}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Pourqui</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.pourquoi}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Dépistage IST</label>
+                    </div>
+                    <div class="col">
+                        <p style="font-weight: italic; color: grey">
+                            <small>{{biomedicaleValue.depistageIST}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label> Dépistage HBS</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.depistageHBS}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Structure dépistage</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.structure_depitage}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Résultats test Hép</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.resulatat_hp}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+
+                <div class="row">
+                    <div class="col">
+                        <label>Si Hép positif, la PC a t-il été orienté</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.hp_orient}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Soins médecine générale</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.soins_medicale}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Distribution préservatif</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.distributionpresev}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Préservatifs</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.preservatif}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Distribution Gel</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.distributionGel}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Gels</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.gels}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Distribution des ARV pour les soins (Taps)</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.distribution_arv}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Distribution des ARV pour la prévention (PrEp)</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.distribution_arv_prev}}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Distribution des ARV pour la PTME</label>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <small>{{biomedicaleValue.distribution_arv_ptme}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-secondary btn-sm float-right" (click)="onClear()">Fermer</button>
+    </form>
+</div>

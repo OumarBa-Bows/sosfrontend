@@ -1,3 +1,5 @@
+
+
 .val{
     thead th {
         font-size: 0.8em;
@@ -24,14 +26,51 @@ table {
   border: 1px solid #ddd;
 }
 
-th, td {
+th{
   text-align: left;
-  padding: 8px;
+  margin: 10px;
 }
+
 
 .theclasse th{
   white-space: nowrap;
 }
 
+.form-row{
+  margin-bottom: 3px;
+}
 
+td{
+  width: 10px;
+  text-align: left;
+}
  
+.nav-tabs {
+  display:none;
+}
+
+@media(min-width:768px) {
+  .nav-tabs {
+      display: flex;
+  }
+  
+  .tab-content .card {
+    border: none;
+ }
+
+  .card .card-header {
+      display:none;
+  }  
+
+  .card .collapse{
+      display:block;
+  }
+}
+
+@media(max-width:767px){
+  .tab-content > .tab-pane {
+      display: block !important;
+      opacity: 1;
+  }
+}
+
